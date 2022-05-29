@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" media="all" href="style.css" />
+
+    <script>
+      const formatLinks = () => {
+        document.querySelectorAll("a").forEach((link) => {
+          link.insertAdjacentHTML(
+            "beforebegin",
+            '<span class="before-link">[</span>'
+          );
+          link.insertAdjacentHTML(
+            "afterend",
+            `<span class="after-link">](${link.getAttribute("href")})</span>`
+          );
+        });
+      };
+
+      const watch = () => {
+        document
+          .querySelector("[data-document]")
+          .addEventListener("ia-writer-change", formatLinks);
+      };
+
+      window.addEventListener("load", () => {
+        formatLinks();
+        watch();
+      });
+    </script>
+  </head>
+  <body class="markdown-body" data-document>
+    &nbsp;
+  </body>
+</html>

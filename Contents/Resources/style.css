@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+}
+
+.night-mode body {
+  filter: invert(1);
+}
+
+.night-mode *::selection {
+  background: rgba(255, 64, 0, 0.2);
+}
+
+.markdown-body a,
+.markdown-body .before-link,
+.markdown-body .after-link {
+  color: blue;
+}
+
+.night-mode .markdown-body a,
+.night-mode .markdown-body .before-link,
+.night-mode .markdown-body .after-link {
+  filter: invert(1);
+}
+
+.night-mode .markdown-body a::selection,
+.night-mode .markdown-body .before-link::selection,
+.night-mode .markdown-body .after-link::selection {
+  background: rgba(0, 191, 255, 0.2);
+}
